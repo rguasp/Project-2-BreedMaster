@@ -7,6 +7,7 @@ const ensureLogin = require("connect-ensure-login");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
+
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
@@ -14,9 +15,10 @@ authRoutes.get("/signup", (req, res, next) => {
 authRoutes.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
+  const email = req.body.email;
 
-  if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Please indicate username and password" });
+  if (username === "" || password === "" || email === "") {
+    res.render("auth/signup", { message: "Please indicate username,password, and Email" });
     return;
   }
 
@@ -31,7 +33,8 @@ authRoutes.post("/signup", (req, res, next) => {
 
     const newUser = new User({
       username:username,
-      password: hashPass
+      password: hashPass,
+      email:email
     });
 
     newUser.save((err) => {
@@ -50,7 +53,7 @@ authRoutes.get("/login", (req, res, next) => {
 
 authRoutes.post("/login", passport.authenticate("local",
 {
-  successRedirect: "/",
+  successRedirect: "/profile",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
@@ -59,7 +62,7 @@ authRoutes.post("/login", passport.authenticate("local",
 
 authRoutes.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/login");
+  res.redirect("/");
 });
 
 function ensureAuthenticated(req, res, next) {
@@ -80,5 +83,9 @@ function checkRoles(role) {
     }
   }
 }
+
+authRoutes.get('/profile', checkRoles('GUEST'), (req, res) => {
+  res.render('auth/profile', {user: req.user});
+});
 
 module.exports = authRoutes;

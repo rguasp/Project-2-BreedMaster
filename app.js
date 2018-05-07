@@ -44,7 +44,12 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
-      
+
+app.use(session({
+  secret: "our-passport-local-strategy-app",
+  resave: true,
+  saveUninitialized: true
+}));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

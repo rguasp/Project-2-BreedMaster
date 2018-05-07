@@ -1,2 +1,14 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{!-- <h1>{{title}}</h1>
+<p>Welcome to {{title}}</p> --}}
+
+
+{{#unless user}}
+  <h1>Welcome</h1> 
+  <div>
+    <a href="/login">Login</a>
+    <a href="/signup">Sign Up </a>
+    <a href="/profile">Profile Page</a>
+    <a href="/logout">Log Out</a>
+    
+  </div>
+{{/unless}}
