@@ -1,8 +1,29 @@
 {{!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
 
+<nav>
+  <ul>
+    <li><a href="/login"><span class="babyblue">Login</span></a></li>
+    <li><a href="/signup">Sign Up </a></li>
+    <li><a href="/profile"><span class="babyblue">Profile Page</span></a></li>
+    <li> <a href="/logout">Log Out</a></li>
+  </ul>
+</nav>
 
-{{#unless user}}
+<header>
+  
+      <h1>Breed<span class="babyblue">Master</span></h1>
+      <h2>"Breeding software for the passionate Dog Breeder"</h2>
+      <h3 class="babyblue">Try it Now </h3>
+      <h3>Its Free!</h3>
+      <div class="getstarted">
+
+      <button><a href="/signup">Get Started</a></button>
+      </div>
+
+  
+</header>
+{{!-- {{#unless user}}
   <h1>Welcome</h1> 
   <div>
     <a href="/login">Login</a>
@@ -11,4 +32,4 @@
     <a href="/logout">Log Out</a>
     
   </div>
-{{/unless}}
+{{/unless}} --}}
