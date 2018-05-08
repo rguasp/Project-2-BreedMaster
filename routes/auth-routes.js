@@ -84,7 +84,7 @@ function checkRoles(role) {
   }
 }
 
-authRoutes.get('/profile', checkRoles('GUEST'), (req, res) => {
+authRoutes.get('/profile', ensureAuthenticated, checkRoles('GUEST'), (req, res) => {
   res.render('auth/profile', {user: req.user});
 });
 

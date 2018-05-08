@@ -2,27 +2,84 @@
 <p>Welcome to {{title}}</p> --}}
 
 <nav>
-  <ul>
-    <li><a href="/login"><span class="babyblue">Login</span></a></li>
-    <li><a href="/signup">Sign Up </a></li>
-    <li><a href="/profile"><span class="babyblue">Profile Page</span></a></li>
+  <ul id="navhover">
+    <li> <a href="#about">About Us</a></li>
+    <li> <a href="#contact">Contact Us</a></li>
+    <li><a href="/login">Login</span></a></li>
+    <li><a href="/signup">Register</a></li>
+    <li><a href="/profile">Profile Page</span></a></li>
     <li> <a href="/logout">Log Out</a></li>
   </ul>
 </nav>
 
-<header>
-  
+<header> 
       <h1>Breed<span class="babyblue">Master</span></h1>
-      <h2>"Breeding software for the passionate Dog Breeder"</h2>
+      <h2>"Breeding <span class="babyblue">software</span> for the passionate <span class="babyblue">Dog Breeder</span>"</h2>
       <h3 class="babyblue">Try it Now </h3>
       <h3>Its Free!</h3>
       <div class="getstarted">
-
-      <button><a href="/signup">Get Started</a></button>
+        <button onclick="window.location.href='/signup'">Get Started</button>
       </div>
-
-  
 </header>
+
+<section id="about">
+  <h2><span class="babyblue">About</span> Us</h2>
+  <h3 class="grey">One man with big ideas.</h3>
+
+  <div class="aboutpic">
+  <img id="rafael" src="./images/about.jpg" alt="rafael">
+  </div>
+  <h3>Rafael Guasp</h3>
+</section>
+
+<section id="contact">
+  <h2>Contact <span class="babyblue">Us</span></h2>
+  <h3>We would like to hear from you!</h3>
+  <div class="contactinfo">
+    <div>
+      <img src="./images/phoneicon2.png" alt="phoneicon">
+      <h4>Phone</h4>
+      <p>+1 786-797-7691</p>  
+      </div>
+    <div>
+      <img src="./images/address.png" alt="addressicon">
+      <h4>Address</h4>
+      <p>120 SW 8th St</p>  
+      <p>33130, Miami,Fl</p>
+      <p>United States</p>
+    </div>
+    <div>
+      <img src="./images/emailicon2.png" alt="emailicon">
+      <h4>Email</h4>
+      <p><a href="#">PapyChulo69@hotmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+
+  <div class="terms">
+  <p>Copyright © Breed Master 2018</p>
+  </div>
+
+  <div>
+  <ul>
+    <li><a href="#"><img src="./images/facebookicon.png" alt="facebookicon"></a></li>
+    <li><a href="#"><img src="./images/twittericon.png" alt="twittericon"></a></li>
+    <li><a href="#"><img src="./images/emailicon.png" alt="emailicon"></a></li>
+  </ul>
+  </div>
+
+  <div class="terms">
+    <ul>
+      <li><a href="#"><span class="blue">Privacy Policy</span></a></li>
+      <li><a href="#"><span class="blue">Terms of Use</span></a></li>
+    </ul>
+  </div>
+
+
+
+</footer>
 {{!-- {{#unless user}}
   <h1>Welcome</h1> 
   <div>

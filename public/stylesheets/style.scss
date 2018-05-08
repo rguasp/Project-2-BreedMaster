@@ -2,7 +2,7 @@ body {
   padding: 0;
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: grey;
+  background-color: darkgrey;
 }
 
 a {
@@ -10,12 +10,20 @@ a {
   text-decoration: none;
 }
 
+  nav{
+   width: 100%;
+   background-color: grey;
+    position: fixed;
+    height: 50px;
+  }
 nav ul {
   display: flex;
   // flex-direction: row;
   // float: right;
+  
   justify-content: space-evenly;
 }
+
  li {
   list-style-type: none;
   display: flex;
@@ -30,6 +38,11 @@ header{
   flex-direction: column;
   text-align: center;
   color: white;
+  background-image: url("../images/pup2.jpg");
+  background-size: cover;
+  // opacity: 0.6;
+  // filter: alpha(opacity=40); 
+  background-repeat: no-repeat;
   // align-content: center;
   
 }
@@ -82,3 +95,103 @@ header button:hover{
   align-content: center;
   justify-content: center;
 }
+#about{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+  justify-content: center;
+  height: 500px;
+  color: white;
+
+}
+#rafael{
+  width: 300px;
+  height: 200px;
+}
+.aboutpic{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  
+}
+
+#about h2{
+  font-size: 3em;
+  margin-bottom: 0;
+}
+.grey{
+  color:grey;
+  font-style: italic;
+  font-weight: 100;
+  margin-top: 0;
+}
+#contact{
+  height: 950px;
+  text-align: center;
+  background-color: white;
+}
+#contact h2{
+  margin-top: 0;
+}
+footer{
+  height: 70px;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+footer ul{
+  display: flex;
+  flex-direction: row;
+
+}
+footer li{
+  padding-left: 10px;
+}
+footer img{
+  width: 35px;
+  height: 35px;
+}
+.terms{
+  padding-top: 10px;
+  color: black;
+}
+.terms a{
+  color: black;
+}
+#contact h3{
+  font-style: italic;
+  font-weight: 100;
+  color: grey;
+}
+#contact h2{
+  font-size: 3em;
+  // color: white;
+  padding-top: 100px;
+}
+.contactinfo img{
+  width: 100px;
+  height: 100px;
+}
+.contactinfo a{
+  color:blue;
+}
+
+#navhover a:hover{
+  color:#46c0eb;
+  text-decoration: none;
+}
+.blue{
+  color: blue;
+}
+
+// .contactinfo{
+//   display: flex;
+//   flex-direction: row;
+//  justify-content: space-around;
+//  padding-top: 200px;
+// }
