@@ -14,7 +14,8 @@ a {
    width: 100%;
    background-color: grey;
     position: fixed;
-    height: 50px;
+    height: 60px;
+    
   }
 nav ul {
   display: flex;
@@ -74,6 +75,8 @@ header button{
   width: 200px;
   padding: 15px 25px 15px 25px;
   text-decoration: none;
+  border: none;
+    outline:none;
   
 
 
@@ -97,6 +100,8 @@ header button:hover{
   display: flex;
   align-content: center;
   justify-content: center;
+  border: none;
+    outline:none;
 }
 #about{
   display: flex;
@@ -185,7 +190,7 @@ footer img{
 }
 
 #navhover a:hover{
-  color:#46c0eb;
+  // color:#46c0eb;
   text-decoration: none;
 }
 .blue{
@@ -234,6 +239,8 @@ footer img{
   width: 200px;
   padding: 15px 25px 15px 25px;
   text-decoration: none;
+  border: none;
+  outline:none;
 }
 .center button:hover{
   background: #3cb0fd;
@@ -268,6 +275,8 @@ footer img{
   width: 200px;
   padding: 15px 25px 15px 25px;
   text-decoration: none;
+  border: none;
+    outline:none;
 }
 .loginbutton:hover{
   background: #3cb0fd;
@@ -282,13 +291,27 @@ footer img{
   background-image: none;
   color: white;
 }
-// .edituser{
-//   display: flex;
-//   flex-direction: column;
-//   align-content: center;
-//   justify-content: center;
-//   text-align: center;
-// }
+.edituser{
+  text-align: center;
+  height: 1000px;
+}
+#navhover button{
+  background-color: grey;
+  border-radius: 3px;
+  height: 35px;
+  // width: 100px;
+  // padding-top: 20px;
+  // padding-bottom: 20px;
+  border: none;
+  outline:none;
+  font-size: 14px;
+}
+#navhover button:hover{
+  background-color: #3498db;
+}
+#welcome{
+  padding-top: 10px;
+}
 // .editbox{
 //   height: 400px;
 //   width: 400px;

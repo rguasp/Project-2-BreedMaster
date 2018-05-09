@@ -20,7 +20,7 @@ const app = express();
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/project', {useMongoClient: true})
+  .connect(process.env.MONGOURI, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
