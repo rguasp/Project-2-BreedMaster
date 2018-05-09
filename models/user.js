@@ -7,7 +7,8 @@ const userSchema = new Schema({
   password: String,
   email: String,
   location: String,
-  dogtypes: String,
+  dogs: String,
+  bio: String,
   role: {
   type: String,
   enum : ['GUEST', 'EDITOR', 'ADMIN'],

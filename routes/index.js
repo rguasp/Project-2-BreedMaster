@@ -3,6 +3,7 @@ const router  = express.Router();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
+  res.locals.user = req.user;
   res.render('index');
 });
 

@@ -1,0 +1,17 @@
+
+
+<div class="edituser">
+
+
+<h1>Bio:</h1>
+
+<h2>{{user.bio}}</h2>
+
+
+
+<form action="/profile/update/{{user._id}}" method="post">
+  <textarea type="text" cols="40" 
+       rows="5" name="bio" style="width:300px; height:50px;" placeholder="{{user.bio}}"></textarea>
+  <input type="submit" value="Submit Changes">
+</form>
+</div>

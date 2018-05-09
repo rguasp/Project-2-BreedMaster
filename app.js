@@ -93,11 +93,14 @@ passport.use(new LocalStrategy({
 }));
 
 
+
 //
 
 app.use(passport.initialize());
 app.use(passport.session());
-const index = require('./routes/index');
+
+
+    const index = require('./routes/index');
 app.use('/', index);
 
 const authRouteVariableThing = require('./routes/auth-routes')

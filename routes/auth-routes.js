@@ -53,7 +53,7 @@ authRoutes.get("/login", (req, res, next) => {
 
 authRoutes.post("/login", passport.authenticate("local",
 {
-  successRedirect: "/profile",
+  successRedirect: "/",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
@@ -84,8 +84,37 @@ function checkRoles(role) {
   }
 }
 
-authRoutes.get('/profile', ensureAuthenticated, checkRoles('GUEST'), (req, res) => {
+authRoutes.get('/profile/:userId', (req, res, next) => {
+  // console.log(req.user);
+  if(req.user === undefined){
+    res.redirect("/login")
+    return;
+  }
   res.render('auth/profile', {user: req.user});
 });
+
+authRoutes.get('/profile/edit/:userId', function (req, res) {
+  User.findById(req.params.userId)
+  .then(theUser => {
+    res.render('editUser', {user: req.user})
+  })
+})
+
+
+authRoutes.post('/profile/update/:userId', function (req, res) {
+  console.log('bio: ', req.body.bio);
+User.findByIdAndUpdate(req.params.userId, {
+    bio: req.body.bio,
+  })
+  
+  .then(response => {
+    res.redirect(`/profile/${req.params.userId}`)
+    //console.log(car);
+  })
+  .catch(theError => { 
+    console.log(theError)
+  })
+
+})
 
 module.exports = authRoutes;

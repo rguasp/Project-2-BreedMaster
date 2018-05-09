@@ -3,17 +3,24 @@
 
 <nav>
   <ul id="navhover">
+    {{#if user}}
+      <li><span class="white">Welcome, {{user.username}}!</span></li>
+    {{/if}}
     <li> <a href="#about">About Us</a></li>
     <li> <a href="#contact">Contact Us</a></li>
-    <li><a href="/login">Login</span></a></li>
+    {{#unless user}}
+    <li><a href="/login">Log In</span></a></li>
     <li><a href="/signup">Register</a></li>
-    <li><a href="/profile">Profile Page</span></a></li>
-    <li> <a href="/logout">Log Out</a></li>
+    {{/unless}}
+    {{#if user}}
+      <li><a href="/profile/:{{user._id}}">Profile Page</span></a></li>
+      <li> <a href="/logout">Log Out</a></li>
+     {{/if}}
   </ul>
 </nav>
 
 <header> 
-      <h1>Breed<span class="babyblue">Master</span></h1>
+      <h1>Master<span class="babyblue">Breed</span></h1>
       <h2>"Breeding <span class="babyblue">software</span> for the passionate <span class="babyblue">Dog Breeder</span>"</h2>
       <h3 class="babyblue">Try it Now </h3>
       <h3>Its Free!</h3>
@@ -59,7 +66,7 @@
 <footer>
 
   <div class="terms">
-  <p>Copyright © Breed Master 2018</p>
+  <p>Copyright © Master Breed 2018</p>
   </div>
 
   <div>
