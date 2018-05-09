@@ -4,7 +4,7 @@
 <nav>
   <ul id="navhover">
     {{#if user}}
-      <li><span class="white" id="welcome">Welcome, {{user.username}}!</span></li>
+      <li><span class="white" id="welcome">Welcome, <span class="babyblue">{{user.username}}</span> </span></li>
     {{/if}}
     <li> <button><a href="#about">About Us</a></button></li>
     <li> <button><a href="#contact">Contact Us</a></button></li>
@@ -13,7 +13,7 @@
     <li><button><a href="/signup">Register</a></button></li>
     {{/unless}}
     {{#if user}}
-      <li><button><a href="/profile/:{{user._id}}">Profile Page</span></a></button></li>
+      <li><button><a href="/profile/:{{user._id}}">Profile</span></a></button></li>
       <li> <button><a href="/logout">Log Out</a></button></li>
      {{/if}}
   </ul>
@@ -22,12 +22,36 @@
 <header> 
       <h1>Breed<span class="babyblue">Master</span></h1>
       <h2>"Breeding <span class="babyblue">software</span> for the passionate <span class="babyblue">Dog Breeder</span>"</h2>
-      <h3 class="babyblue">Try it Now </h3>
-      <h3>Its Free!</h3>
+      <h3><span class="babyblue">Try it </span>Now </h3>
+      <h3>Its <span class="babyblue">Free!</span></h3>
       <div class="getstarted">
         <button onclick="window.location.href='/signup'">Get Started</button>
       </div>
 </header>
+
+<section id="contact">
+  <h2>Contact <span class="babyblue">Us</span></h2>
+  <h3>We would like to hear from you!</h3>
+  <div class="contactinfo">
+    <div>
+      <img id="black" src="./images/phoneicon2.png" alt="phoneicon">
+      <h4>Phone</h4>
+      <p>+1 786-797-7691</p>  
+      </div>
+    <div>
+      <img id="black" src="./images/address.png" alt="addressicon">
+      <h4>Address</h4>
+      <p>120 SW 8th St</p>  
+      <p>33130, Miami,Fl</p>
+      <p>United States</p>
+    </div>
+    <div>
+      <img src="./images/emailicon4.png" alt="emailicon">
+      <h4>Email</h4>
+      <p><a href="#">BreedMaster@hotmail.com</a></p>
+    </div>
+  </div>
+</section>
 
 <section id="about">
   <h2><span class="babyblue">About</span> Us</h2>
@@ -36,32 +60,9 @@
   <div class="aboutpic">
   <img id="rafael" src="./images/about.jpg" alt="rafael">
   </div>
-  <h3>Rafael Guasp</h3>
+  <h3>Rafael <span class="babyblue">Guasp</span></h3>
 </section>
 
-<section id="contact">
-  <h2>Contact <span class="babyblue">Us</span></h2>
-  <h3>We would like to hear from you!</h3>
-  <div class="contactinfo">
-    <div>
-      <img src="./images/phoneicon2.png" alt="phoneicon">
-      <h4>Phone</h4>
-      <p>+1 786-797-7691</p>  
-      </div>
-    <div>
-      <img src="./images/address.png" alt="addressicon">
-      <h4>Address</h4>
-      <p>120 SW 8th St</p>  
-      <p>33130, Miami,Fl</p>
-      <p>United States</p>
-    </div>
-    <div>
-      <img src="./images/emailicon2.png" alt="emailicon">
-      <h4>Email</h4>
-      <p><a href="#">BreedMaster@hotmail.com</a></p>
-    </div>
-  </div>
-</section>
 
 <footer>
 

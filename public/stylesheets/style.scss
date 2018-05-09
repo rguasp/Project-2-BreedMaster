@@ -41,9 +41,9 @@ header{
   color: white;
   background-image: url("../images/pup2.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   // opacity: 0.6;
   // filter: alpha(opacity=40); 
-  background-repeat: no-repeat;
   // align-content: center;
   
 }
@@ -108,6 +108,9 @@ header button:hover{
   flex-direction: column;
   text-align: center;
   background-color: black;
+  background-image: url("../images/aboutbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   justify-content: center;
   height: 500px;
   color: white;
@@ -136,14 +139,21 @@ header button:hover{
 }
 #contact{
   height: 950px;
-  text-align: center;
-  background-color: white;
+   text-align: center;
+  background-color: black;
+  color: white;
+  // background-image: url("../images/contactimg.jpg");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // display: flex;
+  // flex-direction: row;
+ 
 }
 #contact h2{
   margin-top: 0;
 }
 footer{
-  height: 70px;
+  height: 93px;
   background-color: #3498db;
   color: white;
   display: flex;
@@ -151,10 +161,12 @@ footer{
   align-content: center;
   justify-content: space-around;
   padding-top: 15px;
+  // flex-wrap: wrap;
 }
 footer ul{
   display: flex;
   flex-direction: row;
+  // flex-wrap: wrap;
 
 }
 footer li{
@@ -181,6 +193,15 @@ footer img{
   // color: white;
   padding-top: 100px;
 }
+// .contactinfo{
+//   display: flex;
+//   justify-content: space-around;
+//   flex-wrap: wrap;
+//   align-content: center;
+//   margin-top: 150px;
+ 
+ 
+// }
 .contactinfo img{
   width: 100px;
   height: 100px;
@@ -252,12 +273,19 @@ footer img{
   text-decoration: none;
 }
 .loginbody{
+  background-image: url("../images/signupbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1200px;
   
+}
+.loginposition{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 800px;
+
 }
 .loginbutton{
   background: #3498db;
@@ -293,7 +321,52 @@ footer img{
 }
 .edituser{
   text-align: center;
-  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  // height: 80%;
+  padding-bottom: 20px;
+  width: 400px;
+  background-color: black;
+  border-radius: 25px;
+  color: white;
+}
+.edituserbody{
+  height: 1200px;
+  background-image: url("../images/signupbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.edituserposition{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+.edituser button{
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  width: 200px;
+  padding: 5px 15px 5px 15px;
+  text-decoration: none;
+  border: none;
+    outline:none;
+}
+.edituser button:hover{
+  background: #3cb0fd;
+}
+.edituser textarea{
+  border: none;
 }
 #navhover button{
   background-color: grey;
@@ -311,6 +384,16 @@ footer img{
 }
 #welcome{
   padding-top: 10px;
+}
+.signupbody{
+  background-image: url("../images/signupbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1200px;
+}
+#black{
+  background-color: white;
+  border-radius: 50px;
 }
 // .editbox{
 //   height: 400px;

@@ -1,9 +1,21 @@
+<div class="edituserbody">
+
+<nav>
+  <ul id="navhover">
+    <li><span class="white" id="welcome">Welcome, {{user.username}}!</span></li>
+    <li> <button><a href="/">Home</a></li></button>
+    <li><button><a href="/">Dog Listings</a></li></button>
+    <li><button><a href="/profile/:{{user._id}}">Profile</a></li></button>
+    <li><button><a href="/logout">Log Out</a></li></button>
+  </ul>
+</nav>
+
+<div class="edituserposition">
+  <div class="edituser">
 
 
-<div class="edituser">
 
-
-<h1>Bio:</h1>
+<h1><span class="babyblue">Edit Bio</span>:</h1>
 
 <h2>{{user.bio}}</h2>
 
@@ -11,9 +23,11 @@
 
 <form action="/profile/update/{{user._id}}" method="post">
   <textarea type="text" cols="40" 
-       rows="5" name="bio" style="width:300px; height:50px;" 
+       rows="5" name="bio" style="width:180px; height:120px;" 
        placeholder="{{user.bio}}"></textarea>
   <br><br>
-  <input type="submit" value="Submit Changes">
+  <button type="submit" value="Submit Changes">Save Changes</button>
 </form>
+</div>
+</div>
 </div>
