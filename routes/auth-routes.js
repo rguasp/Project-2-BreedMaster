@@ -7,6 +7,7 @@ const flash       = require("connect-flash");
 const ensureLogin = require("connect-ensure-login");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
+const multer  = require('multer');
 
 
 authRoutes.get("/signup", (req, res, next) => {
@@ -191,16 +192,18 @@ authRoutes.post('/dogs/create/', function (req, res) {
   res.redirect(`/profile/${req.user._id}`)
 })
 
-authRoutes.post('/dogs/delete/', function (req, res) {
+authRoutes.post('/dogs/delete/:id', function (req, res) {
+  let data = {};
   const dogId = req.params.id;
+  data.user = req.user;
   Dog.findByIdAndRemove(dogId)
   .then(dog => {
     console.log(dog);
-    res.redirect(`/profile/${req.params.userId}`)
   })
   .catch(error => {
     console.log(error);
   })
+  res.redirect(`/profile/${req.user._id}`)
 })
 
 // app.get('/dogs/edit/:id', function (req, res) {

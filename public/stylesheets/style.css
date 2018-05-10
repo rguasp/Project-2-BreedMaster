@@ -373,7 +373,13 @@ footer img {
   -webkit-text-stroke-color: black; }
 
 .headerdoglist {
-  background: black; }
+  background: black;
+  height: 1000px; }
+
+.headerdoglist li {
+  text-align: center;
+  display: flex;
+  justify-content: center; }
 
 .addbody {
   background-image: url("../images/signupbackground.jpg");
@@ -430,8 +436,8 @@ footer img {
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  margin-left: 400px;
-  margin-right: 400px;
+  width: 250px;
+  text-align: center;
   padding: 5px 15px 5px 15px;
   text-decoration: none;
   border: none;
@@ -439,5 +445,8 @@ footer img {
 
 .dogs button:hover {
   background: #3cb0fd; }
+
+.doglistposition {
+  height: 900px; }
 
 /*# sourceMappingURL=style.css.map */

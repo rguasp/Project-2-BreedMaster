@@ -14,7 +14,8 @@ const LocalStrategy = require("passport-local").Strategy;
 const flash         = require("connect-flash");
 const path         = require('path');
 const User          = require('./models/user');
-
+const multer  = require('multer');
+// const Picture = require('../models/pictures');
 const app = express();
 
 
