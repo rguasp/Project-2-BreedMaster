@@ -12,14 +12,19 @@
 
   <h2>{{user.bio}}</h2>
 
-  
+  {{#if OWNER}}
   <div class="editbutton">
     <button onclick="window.location.href='/profile/edit/{{user._id}}'">Edit</button>
   </div>
+  {{/if}}
+
 </header>
 <section class="dogs">
   <h1 class="dogstitle"><span class="white">Dog's</span> Owned:</h1>
+
+  {{#if OWNER}}
   <button onclick="window.location.href='/dogs/new/'">Add Dog</button>
+  {{/if}}
 
 
 

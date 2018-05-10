@@ -92,8 +92,8 @@ authRoutes.get('/profile/:userId', (req, res, next) => {
   if(req.user === undefined){
     res.redirect("/login")
     return;
-  }else if(req.user._id === req.params.userId){
-    data.
+  }else if( JSON.stringify(req.user._id) === JSON.stringify(req.params.userId) ){
+    data.OWNER = true;
   }
   User.findById(req.params.userId)
   .then(theUser => {
