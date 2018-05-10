@@ -7,7 +7,8 @@
   </ul>
 </nav>
 <header class="headerprofile">
- 
+  
+  
   <h1><span class="babyblue">Bio:</span></</h1>
 
   <h2>{{user.bio}}</h2>
@@ -21,10 +22,28 @@
 </header>
 <section class="dogs">
   <h1 class="dogstitle"><span class="white">Dog's</span> Owned:</h1>
-
+<br>
   {{#if OWNER}}
   <button onclick="window.location.href='/dogs/new/'">Add Dog</button>
   {{/if}}
+  <ul>
+{{#each dogs}}
+<li>
+{{this.name}}
+{{this.breed}}
+{{this.age}}
+<form action="/dogs/delete/{{this._id}}" method="post">
+  <input type="submit" value="Delete"> 
+  {{!-- //can be a button  --}}
+</form>
+{{!-- <a href="/car/edit/{{this._id}}">Edit</a>
+<form action="/cars/delete/{{this._id}}" method="post">
+  <input type="submit" value="Delete"> 
+  {{!-- //can be a button  --}}
+</form> --}}
+</li>
+{{/each}}
+</ul>
 
 
 

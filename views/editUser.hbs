@@ -4,8 +4,8 @@
   <ul id="navhover">
     <li><span class="white" id="welcome">Welcome, {{user.username}}!</span></li>
     <li> <button><a href="/">Home</a></li></button>
-    <li><button><a href="/">Dog Listings</a></li></button>
-    <li><button><a href="/profile/:{{user._id}}">Profile</a></li></button>
+    <li><button><a href="/dogs">Dog Listings</a></li></button>
+    <li><button><a href="/profile/{{user._id}}">Profile</a></li></button>
     <li><button><a href="/logout">Log Out</a></li></button>
   </ul>
 </nav>
@@ -13,6 +13,12 @@
 <div class="edituserposition">
   <div class="edituser">
 
+  <h2>Upload your photo</h2>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="text" name="name">
+    <input type="file" name="photo">
+    <input type="submit" value="Save">
+  </form>
 
 
 <h1><span class="babyblue">Edit Bio</span>:</h1>

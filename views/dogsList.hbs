@@ -1,9 +1,21 @@
+<nav>
+  <ul id="navhover">
+    <li><span class="white" id="welcome">Welcome, <span class="babyblue">{{user.username}}</span></span></li>
+    <li> <button><a href="/">Home</a></li></button>
+    <li><button><a href="/profile/{{user._id}}">Profile</a></li></button>
+    <li><button><a href="/logout">Log Out</a></li></button>
+  </ul>
+</nav>
+<header class="headerdoglist">
+
+<h1 class="babyblue">Dog Listings</h1>
 <ul>
 {{#each theList}}
 <li>
 {{this.name}}
 {{this.breed}}
 {{this.age}}
+{{this.owner}}
 
 {{!-- <a href="/car/edit/{{this._id}}">Edit</a>
 <form action="/cars/delete/{{this._id}}" method="post">
@@ -13,3 +25,4 @@
 </li>
 {{/each}}
 </ul>
+</header>

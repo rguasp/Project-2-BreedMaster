@@ -4,10 +4,10 @@ const Schema   = mongoose.Schema;
 const dogsSchema = new Schema({
   name: String,
   breed: String,
-  age: Number,
+  age: String,
   furcolor: String,
   eyecolor: String,
-  owner: Schema.Types.ObjectId,
+  owner: String,
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });

@@ -97,31 +97,18 @@ authRoutes.get('/profile/:userId', (req, res, next) => {
   }
   User.findById(req.params.userId)
   .then(theUser => {
+    console.log(theUser);
     data.user = theUser;
-    res.render('auth/profile', data)
+    Dog.find({owner: req.user.username})
+    .then((dogsOwned) => {
+      console.log(dogsOwned);
+      data.dogs = dogsOwned;
+      res.render('auth/profile', data)
+    })
   })
 
 
 });
-
-
-
-
-//////////////Ottons work
-
-
-
-
-
-
-
-
-
-
-
-//////////////Ottons work END
-
-
 
   // res.render('auth/profile', {user: req.user});
 
@@ -150,16 +137,27 @@ User.findByIdAndUpdate(req.params.userId, {
 })
 
 authRoutes.get('/dogs', function (req, res) {
+  if(req.user === undefined){
+    res.redirect("/login")
+    return;
+  }
   Dog.find()
   .then(dogs => {
+    console.log(dogs)
     let data = {};
     data.theList = dogs;
+    data.user = req.user;
     res.render('dogsList', data)
   })
   .catch(theError => { console.log(theError) })
 })
 
-authRoutes.get('/dogs/new', function (req, res) {
+authRoutes.get('/dogs/new/', function (req, res) {
+
+  if(req.user === undefined){
+    res.redirect("/login")
+    return;
+  }
   console.log(req)
   res.render('newDog')
 })
@@ -170,6 +168,7 @@ authRoutes.post('/dogs/create/', function (req, res) {
   const theActualName = req.body.theName
   const theActualBreed = req.body.theBreed
   const theActualAge = req.body.theAge
+
   // const theActualOwner = req.body.userId;
 
 
@@ -177,7 +176,8 @@ authRoutes.post('/dogs/create/', function (req, res) {
     name : theActualName,
     breed: theActualBreed,
     age: theActualAge,
-    // owner: theActualOwner,
+    owner: req.user.username
+   
   })
 
   newDog.save()
@@ -191,16 +191,43 @@ authRoutes.post('/dogs/create/', function (req, res) {
   res.redirect(`/profile/${req.user._id}`)
 })
 
-authRoutes.post('/dogs/delete/:id', function (req, res) {
+authRoutes.post('/dogs/delete/', function (req, res) {
   const dogId = req.params.id;
   Dog.findByIdAndRemove(dogId)
   .then(dog => {
     console.log(dog);
+    res.redirect(`/profile/${req.params.userId}`)
   })
   .catch(error => {
     console.log(error);
   })
-res.redirect(`/profile/${req.params.userId}`)
 })
+
+// app.get('/dogs/edit/:id', function (req, res) {
+//   Dog.findById(req.params.id)
+//   .then(theDog => {
+//     res.render('editDog', {dog: req.dog})
+//   })
+// })
+
+
+// app.post('/cars/update/:id', function (req, res) {
+// Car.findByIdAndUpdate(req.params.id, {
+//     brand: req.body.brand,
+//     model: req.body.model,
+//     year: req.body.year,
+//     color: req.body.color,
+//   })
+
+
+//   .then(car => {
+//     //console.log(car);
+//   })
+//   .catch(theError => { 
+//     console.log(theError)
+//   })
+
+//   res.redirect('/cars')
+// })
 
 module.exports = authRoutes;
