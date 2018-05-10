@@ -13,7 +13,7 @@
     <li><button><a href="/signup">Register</a></button></li>
     {{/unless}}
     {{#if user}}
-      <li><button><a href="/profile/:{{user._id}}">Profile</span></a></button></li>
+      <li><button><a href="/profile/{{user._id}}">Profile</span></a></button></li>
       <li> <button><a href="/logout">Log Out</a></button></li>
      {{/if}}
   </ul>

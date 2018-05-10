@@ -348,4 +348,14 @@ footer img {
   background-color: white;
   border-radius: 50px; }
 
+.dogs {
+  height: 500px;
+  background-color: #3498db; }
+
+.dogstitle {
+  text-align: center;
+  margin: 0;
+  padding-top: 40px;
+  font-size: 40px; }
+
 /*# sourceMappingURL=style.css.map */

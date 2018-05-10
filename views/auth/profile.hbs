@@ -2,14 +2,12 @@
   <ul id="navhover">
     <li><span class="white" id="welcome">Welcome, <span class="babyblue">{{user.username}}</span></span></li>
     <li> <button><a href="/">Home</a></li></button>
-    <li><button><a href="/">Dog Listings</a></li></button>
+    <li><button><a href="/dogs">Dog Listings</a></li></button>
     <li><button><a href="/logout">Log Out</a></li></button>
   </ul>
 </nav>
 <header class="headerprofile">
-  <form>
-    <input type="file">
-  </form>
+ 
   <h1><span class="babyblue">Bio:</span></</h1>
 
   <h2>{{user.bio}}</h2>
@@ -19,6 +17,14 @@
     <button onclick="window.location.href='/profile/edit/{{user._id}}'">Edit</button>
   </div>
 </header>
+<section class="dogs">
+  <h1 class="dogstitle"><span class="white">Dog's</span> Owned:</h1>
+  <button onclick="window.location.href='/dogs/new/'">Add Dog</button>
+
+
+
+
+</section>
 
 
 

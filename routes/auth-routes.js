@@ -2,6 +2,7 @@ const express     = require("express");
 const authRoutes  = express.Router();
 const passport    = require("passport");
 const User        = require("../models/user");
+const Dog        = require("../models/dog");
 const flash       = require("connect-flash");
 const ensureLogin = require("connect-ensure-login");
 const bcrypt = require("bcrypt");
@@ -86,12 +87,43 @@ function checkRoles(role) {
 
 authRoutes.get('/profile/:userId', (req, res, next) => {
   // console.log(req.user);
+  const data = {};
+
   if(req.user === undefined){
     res.redirect("/login")
     return;
+  }else if(req.user._id === req.params.userId){
+    data.
   }
-  res.render('auth/profile', {user: req.user});
+  User.findById(req.params.userId)
+  .then(theUser => {
+    data.user = theUser;
+    res.render('auth/profile', data)
+  })
+
+
 });
+
+
+
+
+//////////////Ottons work
+
+
+
+
+
+
+
+
+
+
+
+//////////////Ottons work END
+
+
+
+  // res.render('auth/profile', {user: req.user});
 
 authRoutes.get('/profile/edit/:userId', function (req, res) {
   User.findById(req.params.userId)
@@ -115,6 +147,60 @@ User.findByIdAndUpdate(req.params.userId, {
     console.log(theError)
   })
 
+})
+
+authRoutes.get('/dogs', function (req, res) {
+  Dog.find()
+  .then(dogs => {
+    let data = {};
+    data.theList = dogs;
+    res.render('dogsList', data)
+  })
+  .catch(theError => { console.log(theError) })
+})
+
+authRoutes.get('/dogs/new', function (req, res) {
+  console.log(req)
+  res.render('newDog')
+})
+
+authRoutes.post('/dogs/create/', function (req, res) {
+  // console.log("req body", req.body);
+
+  const theActualName = req.body.theName
+  const theActualBreed = req.body.theBreed
+  const theActualAge = req.body.theAge
+  // const theActualOwner = req.body.userId;
+
+
+  const newDog = new Dog({
+    name : theActualName,
+    breed: theActualBreed,
+    age: theActualAge,
+    // owner: theActualOwner,
+  })
+
+  newDog.save()
+  .then(dog => {
+    //console.log(car);
+  })
+  .catch(theError => { 
+    console.log(theError)
+  })
+  
+  res.redirect(`/profile/${req.user._id}`)
+})
+
+authRoutes.post('/dogs/delete/:id', function (req, res) {
+  const dogId = req.params.id;
+  Dog.findByIdAndRemove(dogId)
+  .then(dog => {
+    console.log(dog);
+  })
+  .catch(error => {
+    console.log(error);
+  })
+res.redirect(`/profile/${req.params.userId}`)
 })
 
 module.exports = authRoutes;

@@ -1,0 +1,15 @@
+<ul>
+{{#each theList}}
+<li>
+{{this.name}}
+{{this.breed}}
+{{this.age}}
+
+{{!-- <a href="/car/edit/{{this._id}}">Edit</a>
+<form action="/cars/delete/{{this._id}}" method="post">
+  <input type="submit" value="Delete"> 
+  {{!-- //can be a button  --}}
+</form> --}}
+</li>
+{{/each}}
+</ul>
