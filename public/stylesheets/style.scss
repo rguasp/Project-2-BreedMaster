@@ -397,7 +397,7 @@ footer img{
   border-radius: 50px;
 }
 .dogs{
-  height: 500px;
+  height: 100%;
   background-color: #3498db;
   display: flex;
   flex-direction: column;
@@ -409,6 +409,7 @@ footer img{
   flex-direction: column;
   align-content: center;
   text-align: center;
+  padding-bottom: 30px;
 }
 .dogstitle{
   text-align: center;
@@ -426,8 +427,9 @@ footer img{
   // display: flex;
   // align-content: center;
   // justify-content: center;
-  height: 1000px;
-  
+  height: 100%;
+  padding-top: 50px;
+  // display: block;
 }
 .headerdoglist li{
   text-align: center;
@@ -473,6 +475,9 @@ footer img{
   border: none;
     outline:none;
 }
+.addnewdog button:hover{
+  background: #3cb0fd;
+}
 .addnewdogposition{
   display: flex;
   flex-direction: column;
@@ -491,11 +496,7 @@ footer img{
 }
 .dogs button{
   background: black;
-  // background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  // background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  // background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  // background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  // background-image: linear-gradient(to bottom, #3498db, #2980b9);
+
   -webkit-border-radius: 60;
   -moz-border-radius: 60;
   border-radius: 60px;
@@ -512,27 +513,32 @@ footer img{
     outline:none;
 }
 .dogs button:hover{
-  background: #3cb0fd;
+  background: grey;
 }
-.doglistposition{
-  height: 900px;
-  // display: flex;
-  // align-content: stretch;
-  // justify-content: flex-start;
-}
-// .editbox{
-//   height: 400px;
-//   width: 400px;
-//   rows: 20;
+// .doglistposition{
+//   // height: 100%;
+//   // display: flex;
+//   // align-content: stretch;
+//   // justify-content: flex-start;
 // }
-// .signup h2{
-//   width: 100px;
+
+.dogprofileimage{
+  display: flex;
+ 
+  justify-content: center;
+}
+.headerdoglist img{
+  width: 200px;
+  height: 200px;
+}
+.headerdoglist li{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-bottom: 30px;
+  justify-content: center;
+}
+// .headerdoglist{
+//   display: flex;
 //   align-content: center;
-//   display: flex;
-// }
-// .contactinfo{
-//   display: flex;
-//   flex-direction: row;
-//  justify-content: space-around;
-//  padding-top: 200px;
 // }

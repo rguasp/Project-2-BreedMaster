@@ -34,7 +34,10 @@
   
 {{#each dogs}}
 <li>
-Profile Image: <img src="{{this.imgPath}}" alt="">
+  <div class="dogprofileimg">
+
+    <img src="{{this.imgPath}}" alt="" width="200px" height="200px">
+  </div>
 Name: {{this.name}}
 Breed: {{this.breed}}
 Age: {{this.age}}
@@ -42,7 +45,9 @@ Age: {{this.age}}
 {{!-- <button><a href="/dogs/edit/{{this._id}}">Edit</a></button> --}}
 <form action="/dogs/delete/{{this._id}}" method="post">
 
-  <input type="submit" value="Delete"> 
+  <button type="submit" value="Delete"> 
+    Delete
+  </button>
 
   {{!-- //can be a button  --}}
 </form>

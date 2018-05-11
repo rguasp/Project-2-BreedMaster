@@ -349,7 +349,7 @@ footer img {
   border-radius: 50px; }
 
 .dogs {
-  height: 500px;
+  height: 100%;
   background-color: #3498db;
   display: flex;
   flex-direction: column;
@@ -360,7 +360,8 @@ footer img {
   display: flex;
   flex-direction: column;
   align-content: center;
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 30px; }
 
 .dogstitle {
   text-align: center;
@@ -374,7 +375,8 @@ footer img {
 
 .headerdoglist {
   background: black;
-  height: 1000px; }
+  height: 100%;
+  padding-top: 50px; }
 
 .headerdoglist li {
   text-align: center;
@@ -414,6 +416,9 @@ footer img {
   border: none;
   outline: none; }
 
+.addnewdog button:hover {
+  background: #3cb0fd; }
+
 .addnewdogposition {
   display: flex;
   flex-direction: column;
@@ -444,9 +449,21 @@ footer img {
   outline: none; }
 
 .dogs button:hover {
-  background: #3cb0fd; }
+  background: grey; }
 
-.doglistposition {
-  height: 900px; }
+.dogprofileimage {
+  display: flex;
+  justify-content: center; }
+
+.headerdoglist img {
+  width: 200px;
+  height: 200px; }
+
+.headerdoglist li {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-bottom: 30px;
+  justify-content: center; }
 
 /*# sourceMappingURL=style.css.map */

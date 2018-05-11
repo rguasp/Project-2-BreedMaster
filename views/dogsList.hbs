@@ -6,6 +6,8 @@
     <li><button><a href="/logout">Log Out</a></li></button>
   </ul>
 </nav>
+
+
 <header class="headerdoglist">
 <div class="doglistposition">
 
@@ -13,7 +15,13 @@
 <ul>
 {{#each theList}}
 <li>
- Profile Image: <img src="{{user.imgPath}}" alt="">
+ 
+   <div class="dogprofileimg">
+<a href="/profile/{{user._id}}">
+<img src="{{this.imgPath}}" alt="">
+</a>
+   </div>
+ 
 Name: {{this.name}}
 Breed: {{this.breed}}
 Age: {{this.age}}
@@ -24,7 +32,8 @@ Owner: {{this.owner}}
 </div>
 </header>
 
-<footer>
+
+{{!-- <footer>
 
   <div class="terms">
   <p>Copyright © Master Breed 2018</p>
@@ -47,4 +56,4 @@ Owner: {{this.owner}}
 
 
 
-</footer>
+</footer> --}}

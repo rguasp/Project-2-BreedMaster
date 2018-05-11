@@ -8,7 +8,7 @@ const dogsSchema = new Schema({
   furcolor: String,
   eyecolor: String,
   // imgName: String,
-  imgPath: String, 
+  imgPath: {type: String, default:"./public/images/dog-default-yellow.jpg"}, 
    owner: String,
 
 }, {
