@@ -4,7 +4,16 @@
   <div class="addnewdog">
 
 <h1 class="babyblue">Add New Dog</h1>
-<form action="/dogs/create" method="post">
+<form action="/dogs/create" method="post" enctype="multipart/form-data">
+<h2>Upload a new Profile Picture</h2>
+  
+
+
+    <label>Profile photo</label>
+    <input type="file" name="photo">
+
+    
+
 
   <p>Name</p>
   <input type="text" name="theName">
@@ -17,7 +26,7 @@
 
  {{!-- <p>Owner</p>
  <input type="text" name="theOwner"> --}}
-<br><br><br><br>
+<br><br><br>
  <button type="submit" value="Submit Dog">Add</button> 
 </form>
   </div>

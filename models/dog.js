@@ -7,7 +7,10 @@ const dogsSchema = new Schema({
   age: String,
   furcolor: String,
   eyecolor: String,
-  owner: String,
+  // imgName: String,
+  imgPath: String, 
+   owner: String,
+
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });

@@ -13,16 +13,11 @@
 <ul>
 {{#each theList}}
 <li>
-{{this.name}}
-{{this.breed}}
-{{this.age}}
-{{this.owner}}
-
-{{!-- <a href="/car/edit/{{this._id}}">Edit</a>
-<form action="/cars/delete/{{this._id}}" method="post">
-  <input type="submit" value="Delete"> 
-  {{!-- //can be a button  --}}
-</form> --}}
+ Profile Image: <img src="{{user.imgPath}}" alt="">
+Name: {{this.name}}
+Breed: {{this.breed}}
+Age: {{this.age}}
+Owner: {{this.owner}}
 </li>
 {{/each}}
 </ul>

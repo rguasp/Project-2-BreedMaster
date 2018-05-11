@@ -8,7 +8,7 @@ const ensureLogin = require("connect-ensure-login");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 const multer  = require('multer');
-
+const uploadCloud = require('../config/cloudinary.js');
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
@@ -163,12 +163,14 @@ authRoutes.get('/dogs/new/', function (req, res) {
   res.render('newDog')
 })
 
-authRoutes.post('/dogs/create/', function (req, res) {
+authRoutes.post('/dogs/create/', uploadCloud.single('photo'),
+ function (req, res) {
   // console.log("req body", req.body);
 
   const theActualName = req.body.theName
   const theActualBreed = req.body.theBreed
   const theActualAge = req.body.theAge
+  const theActualImgPath = req.file.url;
 
   // const theActualOwner = req.body.userId;
 
@@ -177,7 +179,8 @@ authRoutes.post('/dogs/create/', function (req, res) {
     name : theActualName,
     breed: theActualBreed,
     age: theActualAge,
-    owner: req.user.username
+    owner: req.user.username,
+    imgPath: theActualImgPath
    
   })
 

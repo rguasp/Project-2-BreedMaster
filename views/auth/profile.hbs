@@ -31,12 +31,15 @@
   </div>
   {{/if}}
   <ul>
+  
 {{#each dogs}}
 <li>
-{{this.name}}
-{{this.breed}}
-{{this.age}}
+Profile Image: <img src="{{this.imgPath}}" alt="">
+Name: {{this.name}}
+Breed: {{this.breed}}
+Age: {{this.age}}
    
+{{!-- <button><a href="/dogs/edit/{{this._id}}">Edit</a></button> --}}
 <form action="/dogs/delete/{{this._id}}" method="post">
 
   <input type="submit" value="Delete"> 
@@ -44,13 +47,10 @@
   {{!-- //can be a button  --}}
 </form>
 
-{{!-- <a href="/car/edit/{{this._id}}">Edit</a>
-<form action="/cars/delete/{{this._id}}" method="post">
-  <input type="submit" value="Delete"> 
-  {{!-- //can be a button  --}}
-</form> --}}
+
 </li>
 {{/each}}
+
 </ul>
 
 </section>

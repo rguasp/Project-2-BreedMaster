@@ -15,6 +15,7 @@ const flash         = require("connect-flash");
 const path         = require('path');
 const User          = require('./models/user');
 const multer  = require('multer');
+const uploadCloud = require('./config/cloudinary.js');
 // const Picture = require('../models/pictures');
 const app = express();
 
