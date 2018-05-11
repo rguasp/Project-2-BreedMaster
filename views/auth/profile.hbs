@@ -43,6 +43,7 @@ Breed: {{this.breed}}
 Age: {{this.age}}
    
 {{!-- <button><a href="/dogs/edit/{{this._id}}">Edit</a></button> --}}
+{{#if this.owner}}
 <form action="/dogs/delete/{{this._id}}" method="post">
 
   <button type="submit" value="Delete"> 
@@ -51,7 +52,7 @@ Age: {{this.age}}
 
   {{!-- //can be a button  --}}
 </form>
-
+{{/if}}
 
 </li>
 {{/each}}

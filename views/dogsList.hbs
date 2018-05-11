@@ -13,11 +13,11 @@
 
 <h1 class="babyblue">Dog Listings</h1>
 <ul>
+
 {{#each theList}}
 <li>
- 
    <div class="dogprofileimg">
-<a href="/profile/{{user._id}}">
+<a href="/profile/{{this.createdBy}}">
 <img src="{{this.imgPath}}" alt="">
 </a>
    </div>

@@ -170,29 +170,33 @@ authRoutes.post('/dogs/create/', uploadCloud.single('photo'),
   const theActualName = req.body.theName
   const theActualBreed = req.body.theBreed
   const theActualAge = req.body.theAge
-  const theActualImgPath = req.file.url;
+  // const theActualImgPath = req.file.url;
 
   // const theActualOwner = req.body.userId;
+  const newDog = new Dog({});
 
 
-  const newDog = new Dog({
-    name : theActualName,
-    breed: theActualBreed,
-    age: theActualAge,
-    owner: req.user.username,
-    imgPath: theActualImgPath
-   
-  })
-
+  
+  newDog.name = theActualName;
+  newDog.breed = theActualBreed;
+  newDog.age =theActualAge;
+  newDog.owner = req.user.username;
+  newDog.createdBy = req.user._id;
+    if(req.file !== undefined){
+      newDog. imgPath = req.file.url;
+    }
+    console.log("new dog before: ", newDog)
   newDog.save()
   .then(dog => {
+    console.log("new dog after: ", dog)
+
+    res.redirect(`/profile/${req.user._id}`)
     //console.log(car);
   })
   .catch(theError => { 
     console.log(theError)
   })
   
-  res.redirect(`/profile/${req.user._id}`)
 })
 
 authRoutes.post('/dogs/delete/:id', function (req, res) {
