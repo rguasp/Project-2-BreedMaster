@@ -213,31 +213,6 @@ authRoutes.post('/dogs/delete/:id', function (req, res) {
   res.redirect(`/profile/${req.user._id}`)
 })
 
-// app.get('/dogs/edit/:id', function (req, res) {
-//   Dog.findById(req.params.id)
-//   .then(theDog => {
-//     res.render('editDog', {dog: req.dog})
-//   })
-// })
 
-
-// app.post('/cars/update/:id', function (req, res) {
-// Car.findByIdAndUpdate(req.params.id, {
-//     brand: req.body.brand,
-//     model: req.body.model,
-//     year: req.body.year,
-//     color: req.body.color,
-//   })
-
-
-//   .then(car => {
-//     //console.log(car);
-//   })
-//   .catch(theError => { 
-//     console.log(theError)
-//   })
-
-//   res.redirect('/cars')
-// })
 
 module.exports = authRoutes;
